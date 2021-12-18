@@ -212,8 +212,8 @@ class linkedlist extends Component {
                
                 <div className="inputNode popover__wrapper1">
                     Input <input onChange={this.handleChangeInput} value={this.state.input2} type = "text"/>
-                    <div class="popover__content">
-                    <p class="popover__message">
+                    <div className="popover__content">
+                    <p className="popover__message">
                     Find Node : Với 1 tham số đầu vào là index của phần tử cần tìm kiếm<br></br>
                     Insert Node : Với 2 tham số đầu vào là index và value <br></br>
                     Remove Node : Với 1 tham số đầu vào là index của phần tử cần xóa 

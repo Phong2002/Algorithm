@@ -1,0 +1,97 @@
+.node ,.node-data ,.node-next{
+    display: inline-block;
+}
+
+.node{
+    margin-right: 30px;
+    margin-top: 30px;
+    position:relative;
+}
+
+.node-data{
+    min-width:60px;
+    height:40px;
+    background-color:rgb(18, 184, 235);
+    border-radius:15px 0 0 15px;
+  
+}
+
+.node-next{
+    min-width:80px;
+    height:40px;
+    background-color:rgb(18, 155, 235);
+    border-radius:0 15px 15px 0;
+    text-align: center;
+}
+
+.text-center{
+    margin: 0;
+    display:block;
+    height:50%;
+    padding: 5px;
+    text-align: center;
+}
+
+.browse{
+    border-radius:15px;
+    border: red 2px solid;
+}
+
+.node::after {
+    content:"";
+    position:absolute;
+    z-index:-1;
+    left:0;
+    right:-30px;
+    height:20px;
+    top:calc(50% - 10px);
+    background:
+      /*arrow*/
+      linear-gradient(to bottom right,green 49%,transparent 52%) bottom right/15px 50%,
+      linear-gradient(to top right,green 49%,transparent 52%) top right/15px 50%,
+      /*line*/
+      linear-gradient(green,green) right center/50px 2px,
+      linear-gradient(green,green) left center /50px 2px;
+    background-repeat:no-repeat;
+  }
+
+  .popover__wrapper {
+    position: relative;
+    margin-top: 1.5rem;
+    display: inline-block;
+  }
+  .popover__content {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    left: 0px;
+    top: 80px;
+    transform: translate(0, 10px);
+    background-color: #c2eef0;
+    padding: 1.5rem;
+    box-shadow: 0 2px 5px 0 rgba(121, 176, 226, 0.26);
+    width: auto;
+  }
+  .popover__content:before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    right: calc(50% - 10px);
+    top: -8px;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #afe2fa transparent;
+    transition-duration: 0.3s;
+    transition-property: transform;
+  }
+  .popover__wrapper:hover .popover__content {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, -20px);
+    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+  }
+  .popover__message {
+    text-align: left;
+  }
+  

@@ -41,7 +41,7 @@ class linkedlist extends Component {
 
     handleFindNode = () => {
 
-        if(this.state.input[0]==""){}
+        if(this.state.input[0]===""){}
         else{
             this.setState({console:""}) 
             const n = parseInt(this.state.input[0])>=parseInt(this.state.linkedlist.length)?parseInt(this.state.linkedlist.length):parseInt(this.state.input[0])  
@@ -76,7 +76,7 @@ class linkedlist extends Component {
 
     handleCreateNewNode = () => {
         this.setState({consolog:""})
-        if(this.state.input[1]==""){}
+        if(this.state.input[1]===""){}
         else{
 
             this.setState({console:""}) 

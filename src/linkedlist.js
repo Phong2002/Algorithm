@@ -45,7 +45,6 @@ class linkedlist extends Component {
         else{
             this.setState({console:""}) 
             const n = parseInt(this.state.input[0])>=parseInt(this.state.linkedlist.length)?parseInt(this.state.linkedlist.length):parseInt(this.state.input[0])  
-            console.log("n nek " +n);
             for(let i=0; i<n+1;i++){
                 setTimeout(()=>{
                     let newList = this.state.linkedlist
@@ -82,7 +81,6 @@ class linkedlist extends Component {
 
             this.setState({console:""}) 
             const n = parseInt(this.state.input[0])>=parseInt(this.state.linkedlist.length)?parseInt(this.state.linkedlist.length):parseInt(this.state.input[0])  
-            console.log("n nek " +n);
             for(let i=0; i<n+1;i++){
                 setTimeout(()=>{
                     let newList = this.state.linkedlist
@@ -127,10 +125,7 @@ class linkedlist extends Component {
             newList[this.state.input[0]-1].next=newList[this.state.input[0]].address
             
         }
-        console.log("new list " + newList);
-
         this.setState({linkedlist: [...newList]});
-        console.log(this.state.linkedlist);
         this.setState({input2:""})
        
     }
@@ -141,13 +136,10 @@ class linkedlist extends Component {
 
     handleRemoveNode = () => {
         if(this.state.input[0]===""){
-            console.log("n nek " );
         }
         else{
             this.setState({console:""}) 
             const n = parseInt(this.state.input[0])>=parseInt(this.state.linkedlist.length)?parseInt(this.state.linkedlist.length):parseInt(this.state.input[0])  
-            console.log("n nek " +n);
-        
             for(let i=0; i<n+1;i++){
                 setTimeout(()=>{
                     let newList = this.state.linkedlist
@@ -180,7 +172,6 @@ class linkedlist extends Component {
                 else
                 newList[this.state.input[0]-1].next=newList[this.state.input[0]].address
             }
-            console.log("new list " + newList);
             this.setState({linkedlist: [...newList]});
         }
         this.setState({input2:""})
@@ -205,7 +196,6 @@ class linkedlist extends Component {
     handleChangeInput=(e)=> {
         const a=e.target.value;
         const input = a.split(' ').map((item, i) => parseInt(item))
-        console.log(input)
         this.setState({input:input})
         this.setState({input2:e.target.value})
     }

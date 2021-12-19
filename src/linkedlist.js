@@ -40,6 +40,11 @@ class linkedlist extends Component {
     }
 
     handleFindNode = () => {
+         if(this.state.input[0]<0){
+             this.setState({console:"phan tu tim kiem khong ton tai"})
+             this.setState({input2:""})
+             return;
+         }
 
         if(this.state.input[0]===""){}
         else{
@@ -75,12 +80,18 @@ class linkedlist extends Component {
     }
 
     handleCreateNewNode = () => {
+        if(this.state.input[0]<0){
+            this.setState({console:"khong the chen node moi vao vi tri "+this.state.input[0]})
+            this.setState({input2:""})
+            return;
+        }
         this.setState({consolog:""})
-        if(this.state.input[1]===""){}
+        if(this.state.input[1]===undefined){}
         else{
 
             this.setState({console:""}) 
             const n = parseInt(this.state.input[0])>=parseInt(this.state.linkedlist.length)?parseInt(this.state.linkedlist.length):parseInt(this.state.input[0])  
+        
             for(let i=0; i<n+1;i++){
                 setTimeout(()=>{
                     let newList = this.state.linkedlist
@@ -123,11 +134,9 @@ class linkedlist extends Component {
         newList.splice(this.state.input[0],0,newNode)
          if(this.state.input[0]>0){
             newList[this.state.input[0]-1].next=newList[this.state.input[0]].address
-            
         }
         this.setState({linkedlist: [...newList]});
-        this.setState({input2:""})
-       
+        this.setState({input2:""})  
     }
     
     },500*n)
@@ -135,11 +144,20 @@ class linkedlist extends Component {
     
 
     handleRemoveNode = () => {
-        if(this.state.input[0]===""){
+        if(this.state.input[0]<0){
+            this.setState({console:"khong the xoa node o vi tri "+this.state.input[0]})
+            this.setState({input2:""})
+            return;
+        }
+
+        if(this.state.input[0]===undefined){
+         
         }
         else{
             this.setState({console:""}) 
             const n = parseInt(this.state.input[0])>=parseInt(this.state.linkedlist.length)?parseInt(this.state.linkedlist.length):parseInt(this.state.input[0])  
+          
+        
             for(let i=0; i<n+1;i++){
                 setTimeout(()=>{
                     let newList = this.state.linkedlist
@@ -172,6 +190,7 @@ class linkedlist extends Component {
                 else
                 newList[this.state.input[0]-1].next=newList[this.state.input[0]].address
             }
+          
             this.setState({linkedlist: [...newList]});
         }
         this.setState({input2:""})
@@ -205,10 +224,12 @@ class linkedlist extends Component {
             {/* display button */}
             <div className="ButtonHandle">
                 <button onClick={this.handlePrintList}>Print List</button>
-                <button onClick={this.handleFindNode}>Find Node</button>
-                <button onClick={this.handleCreateNewNode}>Insert Node</button>
-                <button onClick={this.handleRemoveNode}>Remove Node</button>
 
+                <button onClick={this.handleFindNode}>Find Node</button>
+
+                <button onClick={this.handleCreateNewNode}>Insert Node</button>
+
+                <button onClick={this.handleRemoveNode}>Remove Node</button>
                
                 <div className="inputNode popover__wrapper1">
                     Input <input onChange={this.handleChangeInput} value={this.state.input2} type = "text"/>
@@ -236,9 +257,6 @@ class linkedlist extends Component {
                 <div className="console row2">
                     {this.state.console}
                 </div>
-
-           
-
             </div>
             </> 
         );

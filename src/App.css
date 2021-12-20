@@ -38,3 +38,13 @@
     transform: rotate(360deg);
   }
 }
+
+.header img{
+  height: 50px;
+}
+
+.footer{
+  display: block;
+  height:30px;
+  background-color:rgb(136, 216, 240)
+}
